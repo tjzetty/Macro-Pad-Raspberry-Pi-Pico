@@ -3,9 +3,13 @@ This is a custom, 16-key, macro pad made using the raspberry pi pico and the pic
 
 
 **KEY FEATURES:**
+
   -on keypress a function and color is run based on keybindings which I have set up.
+  
   -LEDs timeout and turn off after 1 minute of no keypresses. All the keys still work, just the LEDs turn off so the board doesn't get too hot.
+  
   -all written in CircuitPython
+  
   -plug and play. code.py will run right when the board is plugged into a PC.
 
 
