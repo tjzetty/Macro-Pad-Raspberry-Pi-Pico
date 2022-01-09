@@ -20,6 +20,8 @@ This is a custom, 16-key, macro pad made using the raspberry pi pico and the pic
  -I wanted to set this up with the Python os library, but all MicroPython and CircuitPython implimentations do not have the methods to monitor programs opened on the pc.
   
   -I also wanted to use MicroPython but there is no USB_HID support for this board at least. Hopefully this changes in the future.
+  
+  -Discord does not allow you to keybind the end call button (disconnect)
 
 
 
