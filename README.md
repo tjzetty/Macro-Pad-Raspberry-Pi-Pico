@@ -28,5 +28,6 @@ This is a custom, 16-key, macro pad made using the raspberry pi pico and the pic
  -maybe change it so the running lights (no keypresses) are dimmer and colored to their specific program.
  
  -paint on the keycaps so it looks a little nicer.
+ 
 ![PXL_20220109_213418757](https://user-images.githubusercontent.com/65916505/148702096-f43b39e2-853b-4fdf-8876-185e69089982.jpg)
 ![PXL_20220109_213232932](https://user-images.githubusercontent.com/65916505/148702098-172b3502-cf49-4fca-931b-7a1f85e40a20.jpg)
