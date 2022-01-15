@@ -26,8 +26,6 @@ OFF = (0, 0, 0)
 
 # define color of keypress based on row
 def colorPress(x, y):
-    keypad.brightness = 1
-    
     # row 0
     if y == 0:
         if x == 0:
@@ -64,16 +62,16 @@ def functionPress(x, y):
     if x == 0:
         # chrome
         if y == 0:
-            kb.press(Keycode.CONTROL, Keycode.ALT, Keycode.LEFT_BRACKET)
-            kb.release(Keycode.CONTROL, Keycode.ALT, Keycode.LEFT_BRACKET)
+            kb.press(Keycode.GUI, Keycode.ONE)
+            kb.release(Keycode.GUI, Keycode.ONE)
         # discord
         if y == 1:
-            kb.press(Keycode.CONTROL, Keycode.ALT, Keycode.RIGHT_BRACKET)
-            kb.release(Keycode.CONTROL, Keycode.ALT, Keycode.RIGHT_BRACKET)
+            kb.press(Keycode.GUI, Keycode.FOUR)
+            kb.release(Keycode.GUI, Keycode.FOUR)
         # spotify
         if y == 2:
-            kb.press(Keycode.CONTROL, Keycode.ALT, Keycode.BACKSLASH)
-            kb.release(Keycode.CONTROL, Keycode.ALT, Keycode.BACKSLASH)
+            kb.press(Keycode.GUI, Keycode.FIVE)
+            kb.release(Keycode.GUI, Keycode.FIVE)
         # alt + tab
         if y == 3:
             kb.press(Keycode.ALT, Keycode.TAB)
@@ -85,8 +83,8 @@ def functionPress(x, y):
     if x == 1:
         # youtube
         if y == 0:
-            kb.press(Keycode.CONTROL, Keycode.ALT, Keycode.P)
-            kb.release(Keycode.CONTROL, Keycode.ALT, Keycode.P)
+            kb.press(Keycode.ALT, Keycode.KEYPAD_ONE)
+            kb.release(Keycode.ALT, Keycode.KEYPAD_ONE)
         # discord mute
         if y == 1:
             kb.press(Keycode.CONTROL, Keycode.SHIFT, Keycode.M)
@@ -103,8 +101,8 @@ def functionPress(x, y):
     if x == 2:
         # one piece
         if y == 0:
-            kb.press(Keycode.CONTROL, Keycode.ALT, Keycode.ZERO)
-            kb.release(Keycode.CONTROL, Keycode.ALT, Keycode.ZERO)
+            kb.press(Keycode.ALT, Keycode.KEYPAD_TWO)
+            kb.release(Keycode.ALT, Keycode.KEYPAD_TWO)
         # discord deafen
         if y == 1:
             kb.press(Keycode.CONTROL, Keycode.SHIFT, Keycode.D)
@@ -121,8 +119,8 @@ def functionPress(x, y):
     if x == 3:
         # canvas
         if y == 0:
-            kb.press(Keycode.CONTROL, Keycode.ALT, Keycode.NINE)
-            kb.release(Keycode.CONTROL, Keycode.ALT, Keycode.NINE)
+            kb.press(Keycode.ALT, Keycode.KEYPAD_THREE)
+            kb.release(Keycode.ALT, Keycode.KEYPAD_THREE)
         # if y == 1:
             # currently no keybind option to disconnect from a discord call
         # next track
@@ -135,28 +133,48 @@ def functionPress(x, y):
             
 
 def main():
+    # timeout variables
     lastPress = time.time()
-    tcolor = WHITE
+    timeout = False
+    fiveMins = 5 * 60 # timeout duration
     
+    # running loop
     while True:
+        # timeout functionality
         current = time.time()
-        if current > lastPress + 60:
-            tcolor = OFF
-        keypad.brightness = 0.5
-        keypad.color = tcolor # initialize keypad lights
+        if current > lastPress + fiveMins:
+            keypad.color = OFF
+            timeout = True
+        keypad.brightness = 0.2
         
+        # update keys
         for key in keypad.keys:
+            # timeout visibility
+            if timeout:
+                key.color = OFF
+            else:
+                if key.color == OFF or key.color == WHITE:
+                    key.color = colorPress(key.x, key.y)
+                    
+            # on keypress
             if key.is_pressed():
                 lastPress = current
-                tcolor = WHITE
-                keypad.color = tcolor
-                
-                key.color = colorPress(key.x, key.y)
+                timeout = False
+                key.color = WHITE
                 functionPress(key.x, key.y)
                 
+                # keep color on if button is held
                 while key.is_pressed():
-                    time.sleep(0.05) # keep color on if button is held
+                    time.sleep(0.05) 
                 
         time.sleep(0.05)
 
-main()
+# if there is an error turn keypad red and stop the program
+# great for debugging new code!
+try:
+    main()
+except Exception as e:
+    keypad.color = RED
+    time.sleep(10)
+    exit()
+
