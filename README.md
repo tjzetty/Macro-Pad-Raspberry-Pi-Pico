@@ -1,4 +1,4 @@
-# Macro-Pad-Raspberry-Pi-Pico-
+# Macro-Pad-Raspberry-Pi-Pico
 This is a custom, 16-key, macro pad made using the raspberry pi pico and the pico rgb keypad by pimoroni. I have also utilized another github project called rgbkeypad which is very helpful!
 
 
