@@ -30,9 +30,13 @@ This is a custom, 16-key, macro pad made using the raspberry pi pico and the pic
   * [AutoControl Chrome Extension](https://chrome.google.com/webstore/detail/autocontrol-custom-shortc/lkaihdpfpifdlgoapbfocpmekbokmcfd/related) for shortcuts to websites and   bookmarks in chrome.
   * [Audio Switcher](https://audioswit.ch/er#download) to switch between headphones and speakers
   * A useful windows keyboard shortcut is Markup : <kbd>WIN</kbd> + <kbd>1</kbd> to open first program in taskbar, <kbd>WIN</kbd> + <kbd>2</kbd> to open second, etc.
+
+
+
 **FUTURE IDEAS:**
  
- -paint on the keycaps so it looks a little nicer.
+  * paint on the keycaps so it looks a little nicer.
+  * if usb_hid is added to MicroPython, rewrite code.py
  
 ![PXL_20220109_213418757](https://user-images.githubusercontent.com/65916505/148702096-f43b39e2-853b-4fdf-8876-185e69089982.jpg)
 ![PXL_20220109_213232932](https://user-images.githubusercontent.com/65916505/148702098-172b3502-cf49-4fca-931b-7a1f85e40a20.jpg)
