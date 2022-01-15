@@ -5,9 +5,9 @@ This is a custom, 16-key, macro pad made using the raspberry pi pico and the pic
 
 **KEY FEATURES:**
 
-  -on keypress a function and color is run based on keybindings which I have set up.
+  -on keypress a keyboard shortcut is run and the key lights up white as long as it is pressed.
   
-  -LEDs timeout and turn off after 1 minute of no keypresses. All the keys still work, just the LEDs turn off so the board doesn't get too hot.
+  -LEDs timeout and turn off after 5 minutes of no keypresses. All the keys still work, just the LEDs turn off so the board doesn't get too hot.
   
   -all written in CircuitPython
   
@@ -17,7 +17,7 @@ This is a custom, 16-key, macro pad made using the raspberry pi pico and the pic
 
 **LIMITATIONS:**
  
- -I wanted to set this up with the Python os library, but all MicroPython and CircuitPython implimentations do not have the methods to monitor programs opened on the pc.
+  -I wanted to set this up with the Python os library, but all MicroPython and CircuitPython implimentations do not have the methods to monitor programs opened on the pc.
   
   -I also wanted to use MicroPython but there is no USB_HID support for this board at least. Hopefully this changes in the future.
   
@@ -25,9 +25,12 @@ This is a custom, 16-key, macro pad made using the raspberry pi pico and the pic
 
 
 
+**TOOLS I USED:**
+
+  -[AutoControl Chrome Extension](https://chrome.google.com/webstore/detail/autocontrol-custom-shortc/lkaihdpfpifdlgoapbfocpmekbokmcfd/related) for shortcuts to websites and   bookmarks in chrome.
+  - [Audio Switcher](https://audioswit.ch/er#download) to switch between headphones and speakers
+  - A useful windows keyboard shortcut is WIN + 1 to open first program in taskbar, WIN + 2 to open second, etc.
 **FUTURE IDEAS:**
- 
- -maybe change it so the running lights (no keypresses) are dimmer and colored to their specific program.
  
  -paint on the keycaps so it looks a little nicer.
  
