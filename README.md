@@ -29,6 +29,7 @@ This is a custom, 16-key, macro pad made using the raspberry pi pico and the pic
 
   * [AutoControl Chrome Extension](https://chrome.google.com/webstore/detail/autocontrol-custom-shortc/lkaihdpfpifdlgoapbfocpmekbokmcfd/related) for shortcuts to websites and   bookmarks in chrome.
   * [Audio Switcher](https://audioswit.ch/er#download) to switch between headphones and speakers
+  * [pico-rgbkeypad](https://github.com/martinohanlon/pico-rgbkeypad) is a great github project that got me started
   * A useful windows keyboard shortcut is Markup : <kbd>WIN</kbd> + <kbd>1</kbd> to open first program in taskbar, <kbd>WIN</kbd> + <kbd>2</kbd> to open second, etc.
 
 
