@@ -173,6 +173,7 @@ try:
     main()
 except Exception as e:
     keypad.color = RED
+    print(e)
     time.sleep(10)
     exit()
 
