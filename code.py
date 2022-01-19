@@ -76,7 +76,6 @@ def functionPress(x, y):
         if y == 3:
             kb.press(Keycode.ALT, Keycode.TAB)
             kb.release(Keycode.TAB)
-            time.sleep(1)
             kb.release(Keycode.ALT)
     
     # column 1
@@ -170,7 +169,6 @@ def main():
         time.sleep(0.05)
 
 # if there is an error turn keypad red and stop the program
-# great for debugging new code!
 try:
     main()
 except Exception as e:
